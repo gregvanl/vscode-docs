@@ -1,20 +1,20 @@
 # Linux development with WSL and Visual Studio Code Part 2
 
-In an earlier blog post, [Take your Linux development experience in Windows to the next level with WSL and Visual Studio Code Remote](https://devblogs.microsoft.com/commandline/take-your-linux-development-experience-in-windows-to-the-next-level-with-wsl-and-visual-studio-code-remote/), we introduced the Visual Studio Code [Remote - WSL extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl), which simplifies Linux development on Windows Subsystem on Linux ("WSL"). In Part 2, we'll walk you through setting up WSL and VS Code for Python development and create a simple Python "Hello World" application.
+In an earlier blog post, [Take your Linux development experience in Windows to the next level with WSL and Visual Studio Code Remote](https://devblogs.microsoft.com/commandline/take-your-linux-development-experience-in-windows-to-the-next-level-with-wsl-and-visual-studio-code-remote/), we introduced the VS Code [Remote - WSL extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl), which simplifies Linux development on Windows Subsystem on Linux (WSL). In Part 2, we'll walk you through setting up WSL and VS Code for Python development and create a Python "Hello World" application.
 
 ## Windows: The best platform for building Linux Apps
 
-Windows is the most popular operating system in the world, with [almost 50% of developers](https://insights.stackoverflow.com/survey/2019#technology-_-developers-primary-operating-systems) using it every day. At the same time, many of these developers are building applications that are [deployed to Linux](https://insights.stackoverflow.com/survey/2019#technology-_-platforms) based servers running in the cloud or on premise.
+Windows is the most popular operating system in the world, with [almost 50% of developers](https://insights.stackoverflow.com/survey/2019#technology-_-developers-primary-operating-systems) using it every day. At the same time, many of these developers are building applications that are [deployed to Linux-based](https://insights.stackoverflow.com/survey/2019#technology-_-platforms) servers running in the cloud or on-premises.
 
 With the WSL and VS Code, you can now seamlessly develop Linux-based applications on Windows. WSL lets you run a full Linux distro on Windows, where you can install platform-specific toolchains, utilities, and runtimes.
 
 VS Code and the WSL extension let you develop in the context of the Linux environment, using those tools and runtimes, from the comfort of Windows. All of your VS Code settings are maintained across Windows and Linux, making it easy to switch back and forth. Commands and extensions are run directly in Linux, so you don't have to worry about pathing issues, binary compatibility, or other cross-OS challenges. You're able to use VS Code in WSL just as you would from Windows. One tool, two operating systems.
 
-If it sounds magical, it is :-). But, don't take my word for it. Let's get our hands dirty and build a simple Python3 application so you can experience the magic for yourself.
+If it sounds magical, it is :-). But, don't take our word for it. Let's get our hands dirty and build a simple Python3 application so you can experience the magic for yourself.
 
 ## Install and set up WSL
 
-You install WSL from the Windows Store. You can use the store app, or simply search for "Ubuntu" in the Windows' search bar. Choose the distro you want to install and follow the prompts.
+You install WSL from the Windows Store. You can use the store app, or simply search for "Ubuntu" in the Windows' search bar. Choose the Linux distribution you want to install and follow the prompts.
 
 ![select Ubuntu distro](select-distro.png)
 
@@ -41,10 +41,10 @@ And to verify, run:
 python3 –version
 ```
 
-This isn't intended to be a Python tutorial, so we'll do the canonical "Hello World" app. Create a new folder called "helloWorld" and then a python file that will print a message when run:
+This isn't intended to be a Python tutorial, so we'll do the canonical "Hello World" app. Create a new folder called "helloWorld" and then add a Python file that will print a message when run:
 
 ```bash
-mkdir hellowWorld && cd helloWorld
+mkdir helloWorld && cd helloWorld
 echo 'print("hello from python on ubuntu on windows!")' >> hello.py
 python3 hello.py
 ```
@@ -57,17 +57,17 @@ The problem with this model is that the Python runtime, pip, or any conda packag
 
 ![no Python on Windows](no-python-on-windows.png)
 
-Remember, Python is installed in the Linux distro, which means if I'm editing my Python files on the Windows side, I can't run or debug them unless I install the same Python development stack on Windows. And that defeats the purpose of having an isolated Linux instance set up with all my Python tools and runtimes!
+Remember, Python is installed in the Linux distro, which means if we're editing Python files on the Windows side, we can't run or debug them unless we install the same Python development stack on Windows. And that defeats the purpose of having an isolated Linux instance set up with all our Python tools and runtimes!
 
 What can we do?  Visual Studio Code and the Remote – WSL extension to the rescue.
 
 ## Visual Studio Code
 
-VS Code is a lightweight but powerful, cross platform source code editor, built on open source. It comes with built-in support for modern web development with JavaScript, TypeScript, Node.js, CSS, etc. It also has a rich ecosystem of extensions (10K+) providing support for 100s of languages and frameworks, such as Python, Go, PHP, Java, C++, and C#.
+VS Code is a lightweight, cross platform source code editor, built on open source. It comes with built-in support for modern web development with JavaScript, TypeScript, Node.js, CSS, etc. It also has a rich ecosystem of extensions (10K+) providing support for 100s of languages and frameworks, such as Python, Go, PHP, Java, C++, and C#.
 
 If you don't already have VS Code, [download it now](https://code.visualstudio.com). It's about 50 MB to download on Windows and sets up in less than a minute.
 
-Now we just need the magic, and that is the [Remote – WSL extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl).  Open the Extensions view in VS Code (Ctrl+Shift+X) and search for "wsl".  Choose the **Remote – WSL** extension as seen below (it should be at the top of the list) and press **Install**.
+Now we just need the magic, and that is the [Remote – WSL extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl). Open the Extensions view in VS Code (Ctrl+Shift+X) and search for "wsl".  Choose the **Remote – WSL** extension as seen below (it should be at the top of the list) and press **Install**.
 
 ![Remote - WSL extension](remote-wsl-extension.png)
 
@@ -85,7 +85,7 @@ The next thing that happens is VS Code will start and open the helloWorld folder
 
 ![installing vscode server](installing-vscode-server.png)
 
-Now, when we hover over hello.py we get the proper Linux path.
+Now, when we hover over hello.py, we get the proper Linux path.
 
 ![show hello.py Linux path](show-linux-path.png)
 
@@ -107,15 +107,15 @@ Click on it to bring up a set of Remote - WSL extension commands.
 
 ## Installing the Python extension (and additional tools)
 
-Click on hello.py to open it for editing. We are prompted with what we call an "Important" extension recommendation, in this case to install the Python extension, which will give us rich editing and debugging experiences. Go ahead and click on "Install" and reload if prompted.
+Click on hello.py to open it for editing. We are prompted with what we call an "Important" extension recommendation, in this case to install the Python extension, which will give us rich editing and debugging experiences. Go ahead and select **Install** and reload if prompted.
 
-![python extension recommendation](python-extension-recommendation.png)
+![Python extension recommendation](python-extension-recommendation.png)
 
 To prove that the extension is installed in WSL, open the Extensions view again (Ctrl+Shift+X). You will see a section titled **WSL – Installed** and you can see any extensions that are installed on the WSL side.
 
 ![WSL installed extensions](wsl-installed-extensions.png)
 
-Upon reload, you'll also get prompted telling you that the pylint linter is not installed. Linters are used to give us errors and warnings in our code. Go ahead and click on "Install".
+Upon reload, you'll also get prompted telling you that the pylint linter is not installed. Linters are used to give us errors and warnings in our source code. Go ahead and select **Install**.
 
 ![pylint not installed notification](pylint-not-installed.png)
 
@@ -133,7 +133,7 @@ With our tools set up, let's take this one step further. Set a breakpoint on lin
 
 ![set breakpoint](set-breakpoint.png)
 
-Now, press F5 to run your application.  You will be asked how to run the application, and since this is a simple file, just choose "Python File".
+Now, press F5 to run your application. You will be asked how to run the application, and since this is a simple file, just choose **Python File**.
 
 ![select debug configuration](select-debug-config.png)
 
@@ -142,13 +142,14 @@ The app will start, and you'll hit the breakpoint. You can inspect variables, cr
 Press F10 to step and you'll see the output of the print statement in the debug console.
 
 ![VS Code debug view](debug-view.png)
+
 You get the full development experience of Visual Studio Code, using the Linux instance installed in WSL.
 
-If you want to open another folder in WSL, simply open the **File** menu and choose **Open Folder**. You'll get a minimal file and folder navigator for the Linux file system, not the Windows file system.
+If you want to open another folder in WSL, open the **File** menu and choose **Open Folder**. You'll get a minimal file and folder navigator for the Linux file system, not the Windows file system.
 
 ![open folder navigator](open-folder.png)
 
-If you want to switch back to the Windows, just click on the "Show Local" and you'll get the standard Windows File Open dialog.
+If you want to switch back to the Windows, select the **Show Local** option and you'll get the standard Windows File Open dialog.
 
 ## In conclusion
 
@@ -170,5 +171,9 @@ For more information, check out the following resources:
 * [Windows Subsystem for Linux documentation](https://docs.microsoft.com/windows/wsl/install-win10)
 
 Finally, if you really want to supercharge your Windows dev box, try out the new [Windows Terminal](https://devblogs.microsoft.com/commandline/introducing-windows-terminal)!
+
+## Stay tuned
+
+Look for "Linux development with WSL and VS Code" Part 3 coming soon, which will have development tips and tricks on working with multiple Linux distros, switching between Linux and Windows folders, and changing the default shell.
 
 HappyCoding
