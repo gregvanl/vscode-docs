@@ -97,7 +97,11 @@ If that doesn't convince you we're connected to the Linux subsystem, run **Termi
 
 You'll start a new instance of the bash shell in WSL, again from VS Code running on Windows.
 
-> Tip: In the lower left corner of the Status Bar, you can see that we're connected to our **WSL: Ubuntu** instance. Click on it to bring up a set of Remote - WSL extension commands.
+**Tip**: In the lower left corner of the Status Bar, you can see that we're connected to our **WSL: Ubuntu** instance.
+
+![Remote - WSL Status bar](wsl-status-bar.png)
+
+Click on it to bring up a set of Remote - WSL extension commands.
 
 ![Remote - WSL commands](remote-wsl-commands.png)
 
@@ -148,7 +152,7 @@ If you want to switch back to the Windows, just click on the "Show Local" and yo
 
 ## In conclusion
 
-[Do You Believe in Magic?](https://en.wikipedia.org/wiki/Do_You_Believe_in_Magic_(song))
+![Doug Henning magic](magic.png)
 
 ## More information
 
