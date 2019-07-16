@@ -2,13 +2,13 @@
 
 In an earlier blog post, [Take your Linux development experience in Windows to the next level with WSL and Visual Studio Code Remote](https://devblogs.microsoft.com/commandline/take-your-linux-development-experience-in-windows-to-the-next-level-with-wsl-and-visual-studio-code-remote/), we introduced the VS Code [Remote - WSL extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl), which simplifies Linux development on Windows Subsystem on Linux (WSL). In Part 2, we'll walk you through setting up WSL and VS Code for Python development and create a Python "Hello World" application.
 
-## Windows: The best platform for building Linux Apps
+## Windows: A great platform for building Linux Apps
 
 Windows is the most popular operating system in the world, with [almost 50% of developers](https://insights.stackoverflow.com/survey/2019#technology-_-developers-primary-operating-systems) using it every day. At the same time, many of these developers are building applications that are [deployed to Linux-based](https://insights.stackoverflow.com/survey/2019#technology-_-platforms) servers running in the cloud or on-premises.
 
 With the WSL and VS Code, you can now seamlessly develop Linux-based applications on Windows. WSL lets you run a full Linux distro on Windows, where you can install platform-specific toolchains, utilities, and runtimes.
 
-VS Code and the WSL extension let you develop in the context of the Linux environment, using those tools and runtimes, from the comfort of Windows. All of your VS Code settings are maintained across Windows and Linux, making it easy to switch back and forth. Commands and extensions are run directly in Linux, so you don't have to worry about pathing issues, binary compatibility, or other cross-OS challenges. You're able to use VS Code in WSL just as you would from Windows. One tool, two operating systems.
+VS Code and the WSL extension let you develop in the context of the Linux environment, using those tools and runtimes, from the comfort of Windows. All of your VS Code settings are maintained across Windows and Linux, making it easy to switch back and forth. Commands and workspace extensions are run directly in Linux, so you don't have to worry about pathing issues, binary compatibility, or other cross-OS challenges. You're able to use VS Code in WSL just as you would from Windows. One tool, two operating systems.
 
 If it sounds magical, it is :-). But, don't take our word for it. Let's get our hands dirty and build a simple Python3 application so you can experience the magic for yourself.
 
@@ -169,6 +169,7 @@ For more information, check out the following resources:
 * [Remote development over SSH](https://code.visualstudio.com/docs/remote/ssh)
 * [WSL Microsoft Learning module](https://docs.microsoft.com/en-us/learn/modules/get-started-with-windows-subsystem-for-linux)
 * [Windows Subsystem for Linux documentation](https://docs.microsoft.com/windows/wsl/install-win10)
+* [Get started with Python in Visual Studio Code](https://code.visualstudio.com/docs/python)
 
 Finally, if you really want to supercharge your Windows dev box, try out the new [Windows Terminal](https://devblogs.microsoft.com/commandline/introducing-windows-terminal)!
 
