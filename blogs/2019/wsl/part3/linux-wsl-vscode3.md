@@ -4,7 +4,7 @@
 
 ## Multiple distro support
 
-You can install multiple Linux distros on Windows. In this [Linux development with WSL and VS Code Part 2](TBD), we first installed the Ubuntu "LTS" (Long Term Stable) release, which is currently version 18.04. You can install another distro such as Debian from the store (just search for "Ubuntu 16"), such that you end up with two different distros installed.
+You can install multiple Linux distros on Windows. In this [Linux development with WSL and VS Code Part 2](TBD), we first installed the Ubuntu "LTS" (Long Term Stable) release, which is currently version 18.04. You can install another distro such as Debian from the store (just search for "Debian"), such that you end up with two different distros installed.
 
 ![multiple Linux distros](multiple-distros.png)
 
