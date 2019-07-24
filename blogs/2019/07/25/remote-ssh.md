@@ -26,7 +26,7 @@ However, this kind of development comes with its fair share of challenges:
 
 * If you're using remote access software (like VNC), you'll likely experience a lag when editing because your UI is no longer local.
 * If you're using RDP, it's hard to manage multiple connections.
-* Mounting the remote file system and executing bulk operations can be a lot slower.
+* Mounting the remote file system and executing bulk operations can be slow.
 * It's annoying to keep your remote and local environments in sync and you often hit problems where things work in one place, but not the other.
 * Remotely editing files using SSH and Vim means you're no longer in the comfort of your go-to coding editor.
 
