@@ -128,7 +128,7 @@ You can use the bash shell to browse the file system on the VM. You can browse a
 
 ![Remote open folder](remote-open-folder.png)
 
-You can also install extensions specifically on the remote SSH host. Extensions that affect the UI, like themes and snippets, are installed locally and the remaining extensions will need to be installed on the remote SSH host. You'll notice there's two windows when you open the Extensions view, one for extensions on your local machine and one for extensions on your remote host, so even if you SSH into your remote machine from different clients, your remote extensions and setup are still the same. When you go to install an extension, VS Code will automatically install it in the correct context.
+You can also install extensions specifically on the remote SSH host. Extensions that affect the UI, like themes and snippets, are installed locally and the remaining extensions will need to be installed on the remote SSH host. You'll notice there's two windows when you open the Extensions view, one for extensions on your local machine and one for extensions on your remote host. Even if you SSH into your remote machine from different clients, your remote extensions and setup will remain the same. When you go to install an extension, VS Code will automatically install it in the correct context.
 
 ![Intellicode extension installed remotely](intellicode-installed-remotely.png)
 
