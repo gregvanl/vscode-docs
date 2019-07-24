@@ -30,7 +30,7 @@ However, this kind of development comes with its fair share of challenges:
 * It's annoying to keep your remote and local environments in sync and you often hit problems where things work in one place, but not the other.
 * Remotely editing files using SSH and Vim means you're no longer in the comfort of your go-to coding editor.
 
-We'd like to break out of the physical limitation of our local machine without giving up our tools. Now comes the magic of the Remote - SSH extension.
+Wouldn't it be great to break out of the physical limitation of our local machine without giving up our tools. Now comes the magic of the Remote - SSH extension.
 
 ## Harness the power of virtual machines
 
@@ -62,7 +62,7 @@ Now you can specify details of your VM, such as the name, the size of, and the b
 
 There are several authentication methods into a VM, including an SSH public/private key pair or a username and password. We strongly recommend using key-based authentication (if you use a username/password, you'll be prompted to enter your credentials more than once by the extension). If you're on Windows and have already created keys using PuttyGen, you can [reuse them](https://code.visualstudio.com/docs/remote/troubleshooting#_reusing-a-key-generated-in-puttygen).
 
-If you don't have an SSH key pair, yopen a bash shell or the command line and type in:
+If you don't have an SSH key pair, open a bash shell or the command line and type in:
 
 ```bash
 ssh-keygen -t rsa -b 2048
@@ -124,7 +124,9 @@ Once you're connected to your SSH host, you can interact with files and open fol
 
 ![Checking uname in the terminal](check-uname.png)
 
-You can use the bash shell to browse the file system on the VM. You can browse and open folders on the remote home directory with **File** > **Open Folder**.
+You can use the bash shell to browse the file system on the VM. Create a new folder "Demo" with `mkdir Demo`.
+
+You can browse and open folders on the remote home directory with **File** > **Open Folder**.
 
 ![Remote open folder](remote-open-folder.png)
 
@@ -140,7 +142,7 @@ Let's deploy a basic "Hello World" Python app to our VM. We'll be using a popula
 sudo apt install python3-flask
 ```
 
-Create a new file (Ctrl + N) with a basic Hello world Flask application.
+In the "Demo" folder you made earlier, create a new file (`kbstyle(Ctrl + N)`) named "app.py" with a basic Hello world Flask application.
 
 ```python
 from flask import Flask
@@ -154,17 +156,17 @@ if __name__ == "__main__":
     app.run()
 ```
 
-Save the file as "app.py". Once VS Code identifies the file language as Python, you'll see a notification recommending the Microsoft Python extension if it is not already installed on the remote machine.
+Once VS Code identifies the file language as Python, you'll see a notification recommending the Microsoft Python extension if it is not already installed on the remote machine.
 
 ![Python extension recommendation](python-recommendation.png)
 
-Select **Install** and you'll start seeing VS Code's IntelliSense and colorizations on our remote machine.
+Select **Install**, reload VS Code, and you'll start seeing VS Code's IntelliSense and colorizations on our remote machine.
 
 ![python IntelliSense](python-intellisense.png)
 
 To run the app, press `kbstyle(F5)`, and select the **Flask** debug configuration. In the Python Debug Console, you'll see that the app is running on localhost at port 5000. However, localhost currently refers to the remote server, not your local machine. To be able to browse to the web app on your local machine, we're going to leverage another feature here called [Port Forwarding](https://code.visualstudio.com/docs/remote/ssh#_forwarding-a-port-creating-ssh-tunnel).
 
-To be able to access a port on the remote machine that may not be publicly exposed, we need to establish a connection or a tunnel between a port on our local machine and the server. With the app still running, open the SSH Explorer and find the **Forwarded Ports** view. Click on that view, and indicate that we want to forward port 5000:
+To be able to access a port on the remote machine that may not be publicly exposed, we need to establish a connection or a tunnel between a port on our local machine and the server. With the app still running, open the SSH Explorer and find the **Forwarded Ports** view. Click on the **Forward a port** link and indicate that we want to forward port 5000:
 
 ![Enter the port to forward](enter-port.png)
 
