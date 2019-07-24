@@ -128,9 +128,9 @@ You can use the bash shell to browse the file system on the VM. You can browse a
 
 ![Remote open folder](remote-open-folder.png)
 
-You can also install extensions specifically on the remote SSH host. Extensions that affect the UI, like themes and snippets, are installed locally and the remaining extensions will need to be installed on the remote SSH host. You'll notice there's two windows when you open the Extensions view, one for extensions on your local machine and one for extensions on your remote host, so even if you SSH into your remote machine from different clients, your remote extensions and setup are still the same.
+You can also install extensions specifically on the remote SSH host. Extensions that affect the UI, like themes and snippets, are installed locally and the remaining extensions will need to be installed on the remote SSH host. You'll notice there's two windows when you open the Extensions view, one for extensions on your local machine and one for extensions on your remote host, so even if you SSH into your remote machine from different clients, your remote extensions and setup are still the same. When you go to install an extension, VS Code will automatically install it in the correct context.
 
-![Python extension installed remotely](python-installed-remotely.png)
+![Intellicode extension installed remotely](intellicode-installed-remotely.png)
 
 ## Hello World
 
@@ -156,11 +156,11 @@ if __name__ == "__main__":
 
 Save the file as "app.py". Once VS Code identifies the file language as Python, you'll see a notification recommending the Microsoft Python extension if it is not already installed on the remote machine.
 
-TBD python notification
+![Python extension recommendation](python-recommendation.png)
 
 Select Install and you'll start seeing VS Code's IntelliSense and colorizations on our remote machine.
 
-TBD image with IntelliSense
+![python-intellisense](python-intellisense.png)
 
 To run the app, press `kbstyle(F5)`, and select the **Flask** debug configuration. In the Python Debug Console, you'll see that the app is running on localhost at port 5000. However, localhost currently refers to the remote server, not your local machine. To be able to browse to the web app on your local machine, we're going to leverage a cool feature here called [Port Forwarding](https://code.visualstudio.com/docs/remote/ssh#_forwarding-a-port-creating-ssh-tunnel).
 
