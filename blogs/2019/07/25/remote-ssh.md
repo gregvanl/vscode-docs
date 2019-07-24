@@ -120,7 +120,7 @@ You'll know you're connected to your VM by looking at the indicator in the Statu
 
 ![SSH indicator in Status bar](ssh-status-bar.png)
 
-Once you're connected to your SSH host, you can interact with files and open folders on the remote machine. If you open the integrated terminal, you'll see you're working inside a bash shell _while you're on Windows_. Hold up, what?! We're connected to our VM? That was way too easy. That's the point. These extensions make remote development feel easy, smooth, and… well, not remote. 😃
+Once you're connected to your SSH host, you can interact with files and open folders on the remote machine. If you open the integrated terminal, you'll see you're working inside a bash shell _while you're on Windows_. Hold up, we're already connected to our VM? That was way too easy. That's the point. These extensions make remote development feel easy, smooth, and… well, not remote. 😃
 
 ![Checking uname in the terminal](check-uname.png)
 
