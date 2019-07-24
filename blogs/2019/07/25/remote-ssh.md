@@ -104,7 +104,7 @@ You'll also have noticed an indicator on the bottom-left corner of the Status ba
 
 Choose the **Remote-SSH: Connect to Host** command and connect to the host by entering connection information for our VM in the following format: `user@hostname`.
 
-For the `hostname`, go back to the [Azure Portal](https://portal.azure.com) and in the **Overview** pane of the VM we created, copy the **Public IP address**.
+The `user` is the username you used when adding the SSH keys to your VM. For the `hostname`, go back to the [Azure Portal](https://portal.azure.com) and in the **Overview** pane of the VM we created, copy the **Public IP address**.
 
 ![Virtual machine public IP address](vm-public-ip-address.png)
 
