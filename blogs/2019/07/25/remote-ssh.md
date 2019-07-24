@@ -26,7 +26,7 @@ However, this kind of development comes with its fair share of challenges:
 
 * If you're using remote access software (like VNC), you'll likely experience a lag when editing because your UI is no longer local.
 * If you're using RDP, it's hard to manage multiple connections.
-* Mounting the remote file system and executing bulk operations can be a lot slower.
+* Mounting the remote file system and executing bulk operations can be slow.
 * It's annoying to keep your remote and local environments in sync and you often hit problems where things work in one place, but not the other.
 * Remotely editing files using SSH and Vim means you're no longer in the comfort of your go-to coding editor.
 
@@ -62,7 +62,7 @@ Now you can specify details of your VM, such as the name, the size of, and the b
 
 There are several authentication methods into a VM, including an SSH public/private key pair or a username and password. We strongly recommend using key-based authentication (if you use a username/password, you'll be prompted to enter your credentials more than once by the extension). If you're on Windows and have already created keys using PuttyGen, you can [reuse them](https://code.visualstudio.com/docs/remote/troubleshooting#_reusing-a-key-generated-in-puttygen).
 
-If you don't have an SSH key pair, yopen a bash shell or the command line and type in:
+If you don't have an SSH key pair, open a bash shell or the command line and type in:
 
 ```bash
 ssh-keygen -t rsa -b 2048
