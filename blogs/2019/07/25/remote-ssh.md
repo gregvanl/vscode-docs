@@ -32,7 +32,7 @@ However, this kind of development comes with its fair share of challenges:
 
 Wouldn't it be great to break out of the physical limitation of our local machine without giving up our tools. Now comes the magic of the Remote - SSH extension.
 
-## Harness the power of virtual machines
+## Remote Development with Linux
 
 As long as your Linux VM supports SSH, it can be hosted anywhere; on your local host, on premise, in Azure, or in any other cloud. You can also be on any client - Windows, macOS, or Linux.
 
@@ -54,7 +54,7 @@ If you don't have an existing Linux virtual machine, you can create a new VM thr
 
 ![Create a virtual machine](create-vm.png)
 
-Now you can specify details of your VM, such as the name, the size of, and the base image. We will choose Ubuntu Server 18.04 LTS for this example, but you can choose any of the [supported SSH servers](https://code.visualstudio.com/docs/remote/troubleshooting#_installing-a-supported-ssh-server).
+Now you can specify details of your VM, such as the name, the size of, and the base image. We will choose Ubuntu Server 18.04 LTS for this example, but you can choose recent versions of other Linux distros and look at our [supported SSH servers](https://code.visualstudio.com/docs/remote/troubleshooting#_installing-a-supported-ssh-server).
 
 ![Virtual machine instance details](vm-instance-details.png)
 
@@ -94,17 +94,13 @@ The VS Code [Remote - SSH extension](https://marketplace.visualstudio.com/items?
 
 ![Remote SSH extension](remote-ssh-extension.png)
 
-Once you have the extension installed, you will see a new Remote icon on your Activity bar for the extension.
-
-![Remote button on Activity bar](remote-on-activity-bar.png)
-
-You'll also have noticed an indicator on the bottom-left corner of the Status bar. This indicator tells you in which context VS Code is running (local or remote). Click on the indicator to bring up a list of Remote extension commands.
+You'll have noticed an indicator on the bottom-left corner of the Status bar. This indicator tells you in which context VS Code is running (local or remote). Click on the indicator to bring up a list of Remote extension commands.
 
 ![Remote extension commands](remote-commands.png)
 
 Choose the **Remote-SSH: Connect to Host** command and connect to the host by entering connection information for our VM in the following format: `user@hostname`.
 
-The `user` is the username you used when adding the SSH keys to your VM. For the `hostname`, go back to the [Azure Portal](https://portal.azure.com) and in the **Overview** pane of the VM we created, copy the **Public IP address**.
+The `user` is the username you set when adding the SSH keys to your VM. For the `hostname`, go back to the [Azure Portal](https://portal.azure.com) and in the **Overview** pane of the VM we created, copy the **Public IP address**.
 
 ![Virtual machine public IP address](vm-public-ip-address.png)
 
@@ -120,13 +116,15 @@ You'll know you're connected to your VM by looking at the indicator in the Statu
 
 ![SSH indicator in Status bar](ssh-status-bar.png)
 
+The Remote-SSH extension also contributes a new icon on your Activity bar, and clicking on it will open the SSH explorer. Here you can configure your SSH connections. For instance, you can save the hosts you connect to the most and access them from here instead of entering the user and hostname.
+
+![Remote button on Activity bar](remote-on-activity-bar.png)
+
 Once you're connected to your SSH host, you can interact with files and open folders on the remote machine. If you open the integrated terminal, you'll see you're working inside a bash shell _while you're on Windows_. Hold up, we're already connected to our VM? That was way too easy. That's the point. These extensions make remote development feel easy, smooth, and… well, not remote. 😃
 
 ![Checking uname in the terminal](check-uname.png)
 
-You can use the bash shell to browse the file system on the VM. Create a new folder "Demo" with `mkdir Demo`.
-
-You can browse and open folders on the remote home directory with **File** > **Open Folder**.
+You can use the bash shell to browse the file system on the VM. Create a new folder "demo" with `mkdir demo`, and you can browse and open folders on the remote home directory with **File** > **Open Folder**.
 
 ![Remote open folder](remote-open-folder.png)
 
