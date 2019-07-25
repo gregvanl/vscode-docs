@@ -14,7 +14,7 @@ July 25, 2019 by Sana Ajani, [@sana_ajani](https://twitter.com/sana_ajani)
 
 ## Remote - SSH: Easy, smooth, and (like) local
 
-In case you missed it, Visual Studio Code recently released the Remote Development extensions. These are a set of extensions that allow you to develop against a container, a remote machine or virtual machine (VM), or the Windows Subsystem for Linux (WSL) while using VS Code with its full feature set as your development environment.
+In case you missed it, Visual Studio Code recently released the [Remote Development extensions](https://code.visualstudio.com/blogs/2019/05/02/remote-development). The Remote extensions allow you to develop against a container, a remote machine or virtual machine (VM), or the Windows Subsystem for Linux (WSL), while using VS Code with its full feature set as your development environment.
 
 ![Remote SSH architecture](architecture-ssh.png)
 
@@ -25,12 +25,12 @@ More and more developers work on large and complex projects that require them to
 However, this kind of development comes with its fair share of challenges:
 
 * If you're using remote access software (like VNC), you'll likely experience a lag when editing because your UI is no longer local.
-* If you're using RDP, it's hard to manage multiple connections.
+* If you're using the Remote Desktop Protocol (RDP), it can be hard to manage multiple connections.
 * Mounting the remote file system and executing bulk operations can be slow.
 * It's annoying to keep your remote and local environments in sync and you often hit problems where things work in one place, but not the other.
 * Remotely editing files using SSH and Vim means you're no longer in the comfort of your go-to coding editor.
 
-Wouldn't it be great to break out of the physical limitation of our local machine without giving up our tools. Now comes the magic of the Remote - SSH extension.
+Wouldn't it be great to break out of the physical limitation of your local machine without giving up your tools. Now comes the magic of the [Remote - SSH extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh).
 
 ## Remote Development with Linux
 
@@ -90,7 +90,7 @@ Select **Review and Create** and Azure will deploy your VM for you!
 
 Now that we've covered how to create an SSH host, let's connect to it!
 
-The VS Code [Remote - SSH extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) allows you to connect to a remote machine or VM using SSH, all from inside VS Code. If you don't already have it installed, you can search for "remote ssh" in the Extensions view (Ctrl + Shift + X).
+The VS Code [Remote - SSH extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) allows you to connect to a remote machine or VM using SSH, all from inside VS Code. If you don't already have the Remote - SSH extension installed, you can search for "remote ssh" in the Extensions view (Ctrl + Shift + X).
 
 ![Remote SSH extension](remote-ssh-extension.png)
 
@@ -98,9 +98,9 @@ You'll have noticed an indicator on the bottom-left corner of the Status bar. Th
 
 ![Remote extension commands](remote-commands.png)
 
-Choose the **Remote-SSH: Connect to Host** command and connect to the host by entering connection information for our VM in the following format: `user@hostname`.
+Choose the **Remote-SSH: Connect to Host** command and connect to the host by entering connection information for your VM in the following format: `user@hostname`.
 
-The `user` is the username you set when adding the SSH keys to your VM. For the `hostname`, go back to the [Azure Portal](https://portal.azure.com) and in the **Overview** pane of the VM we created, copy the **Public IP address**.
+The `user` is the username you set when adding the SSH public key to your VM. For the `hostname`, go back to the [Azure Portal](https://portal.azure.com) and in the **Overview** pane of the VM we created, copy the **Public IP address**.
 
 ![Virtual machine public IP address](vm-public-ip-address.png)
 
@@ -128,7 +128,7 @@ You can use the bash shell to browse the file system on the VM. Create a new fol
 
 ![Remote open folder](remote-open-folder.png)
 
-You can also install extensions specifically on the remote SSH host. Extensions that affect the UI, like themes and snippets, are installed locally and the remaining extensions will need to be installed on the remote SSH host. You'll notice there's two windows when you open the Extensions view, one for extensions on your local machine and one for extensions on your remote host. Even if you SSH into your remote machine from different clients, your remote extensions and setup will remain the same. When you go to install an extension, VS Code will automatically install it in the correct context.
+You can also install extensions specifically on the remote SSH host. Extensions that affect the UI, like themes and snippets, are installed locally and the remaining extensions will need to be installed on the remote SSH host. You'll notice there's two sections when you open the Extensions view, one for extensions on your local machine and one for extensions on your remote host. Even if you SSH into your remote machine from different clients, your remote extensions and setup will remain the same. When you go to install an extension, VS Code will automatically install it in the correct context.
 
 ![Intellicode extension installed remotely](intellicode-installed-remotely.png)
 
@@ -154,7 +154,7 @@ if __name__ == "__main__":
     app.run()
 ```
 
-Once VS Code identifies the file language as Python, you'll see a notification recommending the Microsoft Python extension if it is not already installed on the remote machine.
+Once VS Code identifies the file language as Python, you'll see a notification recommending the [Microsoft Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) if it is not already installed on the remote machine.
 
 ![Python extension recommendation](python-recommendation.png)
 
@@ -162,7 +162,7 @@ Select **Install**, reload VS Code, and you'll start seeing VS Code's IntelliSen
 
 ![python IntelliSense](python-intellisense.png)
 
-To run the app, press `kbstyle(F5)`, and select the **Flask** debug configuration. In the Python Debug Console, you'll see that the app is running on localhost at port 5000. However, localhost currently refers to the remote server, not your local machine. To be able to browse to the web app on your local machine, we're going to leverage another feature here called [Port Forwarding](https://code.visualstudio.com/docs/remote/ssh#_forwarding-a-port-creating-ssh-tunnel).
+To run the app, press `kbstyle(F5)`, and select the **Flask** debug configuration. In the Python Debug Console, you'll see that the app is running on localhost at port 5000. However, localhost currently refers to the remote server, not your local machine. To be able to browse to the web app on your local machine, we're going to leverage another feature called [Port Forwarding](https://code.visualstudio.com/docs/remote/ssh#_forwarding-a-port-creating-ssh-tunnel).
 
 To be able to access a port on the remote machine that may not be publicly exposed, we need to establish a connection or a tunnel between a port on our local machine and the server. With the app still running, open the SSH Explorer and find the **Forwarded Ports** view. Click on the **Forward a port** link and indicate that we want to forward port 5000:
 
