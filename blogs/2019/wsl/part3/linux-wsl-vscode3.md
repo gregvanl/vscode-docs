@@ -8,6 +8,20 @@ The features described below are provided by the VS Code [Remote – WSL extensi
 
 ![Remote - WSL extension](remote-wsl-extension.png)
 
+## Workaround for renaming folders
+
+In the current version of WSL (WSL1), there is a limitation where it is not possible to rename a non-empty folder from VS Code. To work around this [issue](https://github.com/microsoft/WSL/issues/3395), you can tell VS Code to "poll" for file system changes rather than apply a lock to the folder.
+
+In your user `settings.json`, add:
+
+```json
+"remote.WSL.fileWatcher.polling": true
+```
+
+Polling is resource heavy, so it is not turned on by default. You can also tune how often VS Code polls using the `remote.WSL.fileWatcher.pollingInterval` setting, which is by default every 5 seconds.
+
+You will need to reload VS Code (**Developer: Reload Window** from the Command Palette (F1)) for these settings to take effect. The next version of WSL ([WSL2](https://devblogs.microsoft.com/commandline/wsl-2-is-now-available-in-windows-insiders), which is in preview) fixes this issue and provide significantly better file system performance.
+
 ## Multiple distro support
 
 You can install multiple Linux distros on Windows. If you followed the tutorial in the earlier blog post, you installed the Ubuntu "LTS" (Long Term Stable) release, which is currently version 18.04. You can install another distro such as Debian from the store (just search for "Debian"), such that you end up with two different distros installed.
@@ -19,6 +33,10 @@ If you are connected to one distro and want to open a new VS Code window, bring 
 ![Select WSL distro](select-wsl-distro.png)
 
 **Note**: WSL from Windows 10, May 2019 Update (version 1903) is required for this feature.
+
+You can also run the **Remote-WSL: New Window using Distro…** command from the Remote - WSL command dropdown displayed when you click on the remote development Status bar item on the far left.
+
+![Remote - WSL commands](remote-wsl-commands.png)
 
 ## Switching between Windows (local) and WSL (remote) workspaces
 
@@ -42,19 +60,11 @@ If you are connected to a WSL instance, you'll see all of the shells defined in 
 
 ![Select default shell on WSL](select-default-shell-wsl.png)
 
-## Renaming folders
+## Alpine distro support
 
-In the current version of WSL (WSL1), there is a limitation where it is not possible to rename a non-empty folder from VS Code. To work around this issue, you can tell VS Code to "poll" for file system changes rather than apply a lock to the folder.
+It's still in the [experimental stage](https://github.com/microsoft/vscode-docs/blob/master/remote-release-notes/v1_37.md#wsl) and requires you use the VS Code [Insiders](https://code.visualstudio.com/insiders) build, but you can run VS Code in Alpine distributions.
 
-In your user `settings.json`, add:
-
-```json
-"remote.WSL.fileWatcher.polling": true
-```
-
-Polling is resource heavy, so it is not turned on by default. You can also tune how often VS Code polls using the `remote.WSL.fileWatcher.pollingInterval` setting, which is by default every 5 seconds.
-
-You will need to reload VS Code (**Developer: Reload Window** from the Command Palette (F1)) for these settings to take effect. The next version of WSL ([WSL2](https://devblogs.microsoft.com/commandline/wsl-2-is-now-available-in-windows-insiders), which is in preview) fixes this issue and provide significantly better file system performance.
+![Alpine distribution with VS Code](alpine-distro.png)
 
 ## Linux development on Windows
 
