@@ -114,7 +114,7 @@ However, you can now solve this issue by a new user [setting](/docs/getstarted/s
 
 If you're interested in testing new updates and experimental features as soon as they are available, install the [Remote - SSH Nightly extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh-nightly) (uninstall the Remote-SSH stable extension first). This is the nightly build of the extension where we experiment with new features and settings before releasing them into the stable version.
 
-## We'd like you feedback
+## We'd like your feedback
 
 Thanks for trying out the Remote-SSH extension! If you run into any issues or would like to suggest new features or scenarios for us, please open an issue on our [GitHub repo](https://github.com/microsoft/vscode-remote-release/issues). If you want to see what features we're currently working on or are upcoming, take a look at our Remote Development [release notes](https://github.com/microsoft/vscode-docs/tree/master/remote-release-notes) and [iteration plans](https://github.com/microsoft/vscode-remote-release/issues?q=is%3Aopen+is%3Aissue+label%3Aiteration-plan). You can also try out these [Remote Development tutorials](https://code.visualstudio.com/docs/remote/remote-tutorials), which walk you through using the other remote extensions to work inside Docker containers and the [Window Subsystem for Linux](https://docs.microsoft.com/windows/wsl) (WSL).
 
